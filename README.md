@@ -1,0 +1,2 @@
+mage-cms-block-enhancements
+===========================
