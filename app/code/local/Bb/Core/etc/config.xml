@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <modules>
+        <Bb_Core>
+            <version>1.0.0</version>
+        </Bb_Core>
+    </modules>
+    <global>
+        <helpers>
+            <bb_core>
+                <class>Bb_Core_Helper</class>
+            </bb_core>
+        </helpers>
+    </global>
+    <frontend>
+        <routers>
+            <bb_core>
+                <args>
+                    <modules>
+                        <Bb_Core>Bb_Core</Bb_Core>
+                    </modules>
+                </args>
+            </bb_core>
+        </routers>
+
+        <translate>
+            <modules>
+                <bb_core>
+                    <files>
+                        <default>Bb_Core.csv</default>
+                    </files>
+                </bb_core>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <bb_core>
+                    <file>bb_core.xml</file>
+                </bb_core>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <layout>
+            <updates>
+                <bb_core>
+                    <file>bb_core.xml</file>
+                </bb_core>
+            </updates>
+        </layout>
+
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Bb_Core before="Mage_Adminhtml">Bb_Core_Adminhtml</Bb_Core>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+</config>

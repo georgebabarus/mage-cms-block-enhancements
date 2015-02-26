@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<layout>
+
+    <adminhtml_bbmodules_products>
+        <reference name="head">
+            <action method="setCanLoadExtJs">
+                <true>true</true>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="core/template" template="bb_products/help.phtml" name="sliders_admin" alias="sliders_admin" />
+
+        </reference>
+    </adminhtml_bbmodules_products>
+
+
+    <adminhtml_bbmodules_help>
+        <reference name="head">
+            <action method="setCanLoadExtJs">
+                <true>true</true>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="core/template" template="bb_products/help.phtml" name="bb_help" alias="bb_help" />
+
+        </reference>
+    </adminhtml_bbmodules_help>
+
+</layout>
