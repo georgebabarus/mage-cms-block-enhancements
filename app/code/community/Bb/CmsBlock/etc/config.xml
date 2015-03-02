@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Zitec extension for Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade
+ * the Bb CmsBlock module to newer versions in the future.
+ * If you wish to customize the Bb CmsBlock module for your needs
+ * please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category   Bb
+ * @package    Bb_CmsBlock
+ * @copyright  Copyright (C) 2014 
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <Bb_CmsBlock>
+            <version>0.1.0</version>
+        </Bb_CmsBlock>
+    </modules>
+    <global>
+        <blocks>
+            <cms>
+                <rewrite>
+                    <block>Bb_CmsBlock_Block_Block</block>
+                </rewrite>
+            </cms>
+            <bb_cmsblock>
+                <class>Bb_CmsBlock_Block</class>
+            </bb_cmsblock>
+            <adminhtml>
+                <rewrite>
+                    <cms_block_grid>Bb_CmsBlock_Block_Adminhtml_Block_Grid</cms_block_grid>
+                    <cms_page_grid>Bb_CmsBlock_Block_Adminhtml_Page_Grid</cms_page_grid>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+        <models>
+            <bb_cms>
+                <class>Bb_CmsBlock_Model</class>
+                <resourceModel>bb_cmsBlock_resource</resourceModel>
+            </bb_cms>
+        </models>
+    </global>
+    <frontend>
+        <events>
+            <core_block_abstract_to_html_after>
+                <observers>
+                    <core_block_abstract_to_html_after>
+                        <type>singleton</type>
+                        <class>bb_cms/observer</class>
+                        <method>appendFrontendBlockAfterHtml</method>
+                    </core_block_abstract_to_html_after>
+                </observers>
+            </core_block_abstract_to_html_after>
+        </events>
+    </frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Bb_CmsBlock before="Mage_Adminhtml">Bb_CmsBlock_Adminhtml</Bb_CmsBlock>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <bb_cmsblock>
+                    <file>bb_cms.xml</file>
+                </bb_cmsblock>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <bb_slider>
+                    <files>
+                        <default>Bb_Cms.csv</default>
+                    </files>
+                </bb_slider>
+            </modules>
+        </translate>
+    </adminhtml>
+
+</config>
+

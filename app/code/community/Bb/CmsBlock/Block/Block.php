@@ -43,9 +43,11 @@ class Bb_CmsBlock_Block_Block extends Mage_Cms_Block_Block
      */
     protected function _toHtml()
     {
+
         $blockId = $this->getBlockId();
 
         Mage::getSingleton('core/session', array('name' => 'adminhtml'))->start();
+        $adminLoggedIn2 = Mage::getSingleton('admin/session')->isLoggedIn();
         $adminLoggedIn = Mage::getSingleton('admin/session', array('name' => 'adminhtml'))->isLoggedIn();
         $html = '';
         $developerMode = Mage::getIsDeveloperMode();
